@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOLTiBAND — Performance Marketing Agency | Google Ads, Meta Ads & SEO</title>
+<meta name="description" content="BOLTiBAND is a performance marketing agency helping businesses grow with Google Ads, Meta Ads, and SEO & Content. Real results, transparent reporting, no fluff.">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="main-nav">
+  <div class="nav-logo" onclick="goto('home')">Boltiband<span>.</span></div>
+  <div class="nav-links">
+    <span class="nav-lnk active" onclick="goto('home')" data-page="home">Home</span>
+    <span class="nav-lnk" onclick="goto('services')" data-page="services">Services</span>
+    <span class="nav-lnk" onclick="goto('casestudies')" data-page="casestudies">Case Studies</span>
+    <span class="nav-lnk" onclick="goto('about')" data-page="about">About Us</span>
+    <span class="nav-lnk" onclick="goto('contact')" data-page="contact">Contact Us</span>
+    <button class="nav-btn" onclick="window.location.href='https://calendly.com/palakbhatia192000/palak-meetings'">Book a Free Call →</button>
+  </div>
+  <div class="ham" id="ham" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mob-menu" id="mob-menu">
+  <span class="mob-lnk" onclick="goto('home');toggleMenu()" data-mob="home">Home</span>
+  <span class="mob-lnk" onclick="goto('services');toggleMenu()" data-mob="services">Services</span>
+  <span class="mob-lnk" onclick="goto('casestudies');toggleMenu()" data-mob="casestudies">Case Studies</span>
+  <span class="mob-lnk" onclick="goto('about');toggleMenu()" data-mob="about">About Us</span>
+  <span class="mob-lnk" onclick="goto('contact');toggleMenu()" data-mob="contact">Contact Us</span>
+  <button class="mob-btn" onclick="window.location.href='https://calendly.com/palakbhatia192000/palak-meetings';toggleMenu()">Book a Free Call →</button>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PAGE: HOME
+═══════════════════════════════════════ -->
+<div id="page-home" class="page-enter">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div><div class="hero-glow2"></div>
+    <div class="a1">
+      <div class="eyebrow"><div class="ed"></div>Performance Marketing Agency</div>
+      <h1>Ads that grow.<br>Content that<br><em>converts.</em></h1>
+      <p class="hero-sub">We help businesses scale with Google Ads, Meta Ads, and SEO & Content — built on real results, not vanity metrics.</p>
+      <div class="hero-btns">
+        <button class="btn-green" onclick="window.location.href='https://calendly.com/palakbhatia192000/palak-meetings'">Book a Free Strategy Call →</button>
+        <button class="btn-ghost" onclick="goto('casestudies')">See Our Work</button>
+      </div>
+    </div>
+    <div class="hero-vis a2">
+      <div class="mc fl0"><div class="mc-lbl">Meta Ads · E-commerce</div><div class="mc-val">18%</div><div class="mc-meta">↑ Qualified Rate in 45 days</div></div>
+      <div class="mc fl1"><div class="mc-lbl">Google Ads · Local Services</div><div class="mc-val">65%</div><div class="mc-meta neg">↓ Cost per lead · 365 days</div></div>
+      <div class="mc fl2"><div class="mc-lbl">SEO · Dry Cleaning Brand</div><div class="mc-val">#3</div><div class="mc-meta">↑ Ranked in 30 days</div></div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <div class="ind-bar a3">
+    <div class="ind-lbl">Industries we've worked across</div>
+    <div class="ind-tw">
+      <div class="ind-tr">
+        <span class="itag">Healthcare</span><span class="itag">Education</span><span class="itag">Local Services</span><span class="itag">SaaS / Tech</span><span class="itag">Hospitality</span><span class="itag">D2C Brands</span><span class="itag">Professional Services</span>
+        <span class="itag">Healthcare</span><span class="itag">Education</span><span class="itag">Local Services</span><span class="itag">SaaS / Tech</span><span class="itag">Hospitality</span><span class="itag">D2C Brands</span><span class="itag">Professional Services</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar a4">
+    <div class="stat"><div class="stat-n">₹15<span>L+</span></div><div class="stat-l">Ad Spend Managed</div></div>
+    <div class="stat"><div class="stat-n">10<span>+</span></div><div class="stat-l">Projects Delivered</div></div>
+    <div class="stat"><div class="stat-n">3.2<span>×</span></div><div class="stat-l">Avg. ROAS Achieved</div></div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="sec">
+    <div class="sh">
+      <div class="stag">What we do</div>
+      <h2 class="stitle">Three services.<br>One growth goal.</h2>
+      <p class="ssub">Every service is built for one outcome — measurable, scalable growth for your business.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card" onclick="goto('services')">
+        <div class="svc-icon">🔍</div>
+        <div class="svc-name">SEO & Content Writing</div>
+        <div class="svc-desc">Rank higher, attract the right audience, and turn readers into customers.</div>
+        <div class="svc-list"><div class="svc-li">On-page & technical SEO</div><div class="svc-li">Blog & article writing</div><div class="svc-li">Keyword strategy</div><div class="svc-li">Local SEO</div></div>
+        <div class="svc-lnk">Learn more →</div>
+      </div>
+      <div class="svc-card" onclick="goto('services')">
+        <div class="svc-icon">📱</div>
+        <div class="svc-name">Meta Ads</div>
+        <div class="svc-desc">Facebook & Instagram campaigns engineered for leads, ROAS, and scalable growth.</div>
+        <div class="svc-list"><div class="svc-li">Lead gen & retargeting</div><div class="svc-li">Creative strategy</div><div class="svc-li">CAPI / server-side tracking</div><div class="svc-li">Audience research</div></div>
+        <div class="svc-lnk">Learn more →</div>
+      </div>
+      <div class="svc-card" onclick="goto('services')">
+        <div class="svc-icon">🎯</div>
+        <div class="svc-name">Google Ads</div>
+        <div class="svc-desc">Search, Display, and Performance Max that bring in high-intent buyers.</div>
+        <div class="svc-list"><div class="svc-li">Search & Display</div><div class="svc-li">Performance Max</div><div class="svc-li">Shopping campaigns</div><div class="svc-li">Remarketing</div></div>
+        <div class="svc-lnk">Learn more →</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="sec sec-dark" style="padding-top:0">
+    <div class="sh">
+      <div class="stag">Our process</div>
+      <h2 class="stitle">How we work</h2>
+      <p class="ssub">A clear 4-step process so you always know what's happening and what comes next.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-step"><div class="ps-num">01 —</div><div class="ps-name">Free Audit</div><div class="ps-desc">We review your setup and find what's working and what's leaking money.</div><div class="ps-conn"></div></div>
+      <div class="proc-step"><div class="ps-num">02 —</div><div class="ps-name">Strategy</div><div class="ps-desc">A tailored 90-day growth plan — no templates, no guesswork.</div><div class="ps-conn"></div></div>
+      <div class="proc-step"><div class="ps-num">03 —</div><div class="ps-name">Launch & Optimise</div><div class="ps-desc">We launch, test, and optimise continuously — tracking every rupee.</div><div class="ps-conn"></div></div>
+      <div class="proc-step"><div class="ps-num">04 —</div><div class="ps-name">Report & Scale</div><div class="ps-desc">Monthly reports, full dashboard access, and a clear path to scale.</div></div>
+    </div>
+  </section>
+
+  <!-- FEATURED CASE STUDY -->
+  <section class="sec" style="padding-top:0">
+    <div class="sh">
+      <div class="stag">Featured result</div>
+      <h2 class="stitle">Real work. Real numbers.</h2>
+    </div>
+    <div class="cs-block">
+      <div class="cs-left">
+        <div class="cs-tags"><span class="atag">Education</span><span class="atag">Meta Ads</span></div>
+        <div class="cs-big">18<span>%</span></div>
+        <div class="cs-sub">Qualification Rate</div>
+        <p class="cs-body">A new market pipeline for nurses moving to Germany, built from scratch with multi-channel ads and strong lead tracking.</p>
+        <span class="cs-lnk" onclick="goto('casestudies')">Read full case study →</span>
+      </div>
+      <div class="cs-right">
+        <div class="mr-row"><span class="mr-lbl">Cost per lead</span><div class="mr-vals"><span class="mr-before">₹100</span><span class="mr-arrow">→</span><span class="mr-after">₹31</span></div></div>
+        <!-- <div class="mr-row"><span class="mr-lbl">ROAS</span><div class="mr-vals"><span class="mr-before">1.4×</span><span class="mr-arrow">→</span><span class="mr-after">3.1×</span></div></div> -->
+        <div class="mr-row"><span class="mr-lbl">Monthly leads</span><div class="mr-vals"><span class="mr-before">50</span><span class="mr-arrow">→</span><span class="mr-after">335</span></div></div>
+        <div class="mr-row"><span class="mr-lbl">Timeline</span><div class="mr-vals"><span class="mr-only">60 days</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <!-- <section class="sec sec-dark" style="padding-top:0">
+    <div class="sh">
+      <div class="stag">What clients say</div>
+      <h2 class="stitle">Trusted by founders<br>&amp; marketing teams.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="tcard"><div class="tcard-stars">★★★★★</div><p class="tcard-q">The first strategy call gave us three ideas we implemented that same week. Rare to work with an agency that actually prepares before the call.</p><div class="tcard-author"><div class="tcard-av">RA</div><div><div class="tcard-name">Rahul A.</div><div class="tcard-role">Founder · E-commerce brand</div></div></div></div>
+      <div class="tcard"><div class="tcard-stars">★★★★★</div><p class="tcard-q">Our Google Ads were bleeding money. They restructured everything in two weeks — leads at half the cost, and reporting is incredibly transparent.</p><div class="tcard-author"><div class="tcard-av">SM</div><div><div class="tcard-name">Sneha M.</div><div class="tcard-role">Marketing Head · Healthcare startup</div></div></div></div>
+      <div class="tcard"><div class="tcard-stars">★★★★★</div><p class="tcard-q">Our blog now drives 60% of our inbound leads. The content strategy didn't just rank — it converted visitors into demos.</p><div class="tcard-author"><div class="tcard-av">PK</div><div><div class="tcard-name">Priya K.</div><div class="tcard-role">Co-founder · SaaS company</div></div></div></div>
+    </div>
+  </section> -->
+
+   <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-box">
+      <h2>Ready to grow your business?</h2>
+      <p>Book a free 30-minute strategy call. No pitch. No pressure. Just a clear growth plan.</p>
+      <button class="btn-dark" onclick="goto('book')">Book My Free Strategy Call →</button>
+      <!-- <div class="cta-note">Usually responds within 2 hours · 30 min · No commitment needed</div> -->
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     PAGE: SERVICES
+═══════════════════════════════════════ -->
+<div id="page-services" style="display:none">
+
+  <div class="page-hero">
+    <div class="stag a1">What we do</div>
+    <h1 class="a2">Performance marketing<br>that pays for itself.</h1>
+    <p class="a3" style="font-size:15px;color:var(--tm);max-width:520px;line-height:1.7;margin-top:12px">Every service we offer is built around one principle — your results come first. Data over opinions, always.</p>
+  </div>
+
+  <!-- SEO -->
+  <div class="svc-detail">
+    <div class="svc-detail-inner">
+      <div>
+        <div class="svc-detail-icon">🔍</div>
+        <h2>SEO & Content Writing</h2>
+        <p class="svc-detail-desc">Rank on page one for the terms your customers are searching, and stay there. We combine technical SEO with content that actually converts — not just content that fills pages.</p>
+        <p class="svc-detail-desc">Our content writers understand both search algorithms and human psychology. Every article we write is designed to rank, engage, and convert.</p>
+        <div class="svc-delivers">
+          <div class="svc-del-item">On-page optimisation</div>
+          <div class="svc-del-item">Technical SEO audit</div>
+          <div class="svc-del-item">Blog & article writing</div>
+          <div class="svc-del-item">Keyword research & mapping</div>
+          <div class="svc-del-item">Local SEO</div>
+          <div class="svc-del-item">Link building strategy</div>
+          <div class="svc-del-item">Content calendar planning</div>
+          <div class="svc-del-item">Monthly ranking reports</div>
+        </div>
+        <button class="btn-green" onclick="window.location.href='https://calendly.com/palakbhatia192000/palak-meetings'">Get a SEO Audit →</button>
+        <div class="tools-grid" style="margin-top:20px">
+          <span class="tool-chip">Ahrefs</span><span class="tool-chip">SEMrush</span><span class="tool-chip">Search Console</span><span class="tool-chip">GA4</span><span class="tool-chip">Screaming Frog</span>
+        </div>
+      </div>
+      <div class="svc-detail-right">
+        <h3>Typical results</h3>
+        <div class="metric">
+          <div class="metric-item"><span>Avg. organic traffic increase</span><span>+180%</span></div>
+          <div class="metric-item"><span>Avg. time to first ranking</span><span>60–90 days</span></div>
+          <div class="metric-item"><span>Blog conversion rate</span><span>3–6%</span></div>
+          <div class="metric-item"><span>Content pieces/month</span><span>4–12</span></div>
+        </div>
+        <div style="margin-top:20px;padding:14px;background:rgba(165,218,118,0.08);border:0.5px solid var(--ac3);border-radius:9px">
+          <p style="font-size:12.5px;color:var(--tm);line-height:1.6;font-style:italic">"Our blog now drives 60% of our inbound leads."<br><span style="font-size:11px;color:var(--td);font-style:normal;margin-top:4px;display:block">— SaaS Services</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- META ADS -->
+  <div class="svc-detail">
+    <div class="svc-detail-inner rev">
+      <div>
+        <div class="svc-detail-icon">📱</div>
+        <h2>Meta Ads</h2>
+        <p class="svc-detail-desc">Facebook and Instagram advertising that goes beyond boosted posts. We build full-funnel Meta campaigns — from awareness to conversion — with creative strategy built in from day one.</p>
+        <p class="svc-detail-desc">We implement server-side tracking via Conversions API (CAPI) so your data is accurate and your targeting is sharper — especially in a post-iOS14 world.</p>
+        <div class="svc-delivers">
+          <div class="svc-del-item">Campaign strategy & setup</div>
+          <div class="svc-del-item">Lead gen campaigns</div>
+          <div class="svc-del-item">Retargeting funnels</div>
+          <div class="svc-del-item">Creative strategy & briefs</div>
+          <div class="svc-del-item">CAPI / server-side tracking</div>
+          <div class="svc-del-item">Audience research</div>
+          <div class="svc-del-item">A/B testing</div>
+          <div class="svc-del-item">Weekly performance reports</div>
+        </div>
+        <button class="btn-green" onclick="window.location.href='https://calendly.com/palakbhatia192000/palak-meetings'">Get a Free Meta Ads Audit →</button>
+        <div class="tools-grid" style="margin-top:20px">
+          <span class="tool-chip">Meta Ads Manager</span><span class="tool-chip">Meta CAPI</span><span class="tool-chip">GA4</span><span class="tool-chip">Google Tag Manager</span>
+        </div>
+      </div>
+      <div class="svc-detail-right">
+        <h3>Typical results</h3>
+        <div class="metric">
+          <div class="metric-item"><span>Avg. CPL reduction</span><span>62%-65%</span></div>
+          <div class="metric-item"><span>Avg. Qualification rate</span><span>10%–12%</span></div>
+          <div class="metric-item"><span>Time to optimised campaigns</span><span>45 days</span></div>
+          <div class="metric-item"><span>Event Match Quality score</span><span>7.5+/10</span></div>
+        </div>
+        <div style="margin-top:20px;padding:14px;background:rgba(165,218,118,0.08);border:0.5px solid var(--ac3);border-radius:9px">
+          <p style="font-size:12.5px;color:var(--tm);line-height:1.6;font-style:italic">"CPL dropped from ₹100 to ₹31 in 45 days."<br><span style="font-size:11px;color:var(--td);font-style:normal;margin-top:4px;display:block">— Education Brand</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOOGLE ADS -->
+  <div class="svc-detail">
+    <div class="svc-detail-inner">
+      <div>
+        <div class="svc-detail-icon">🎯</div>
+        <h2>Google Ads</h2>
+        <p class="svc-detail-desc">Put your business in front of people who are actively searching for what you offer. We manage Search, Display, Performance Max, Shopping, and Remarketing campaigns with a focus on ROI — not just clicks.</p>
+        <p class="svc-detail-desc">We audit your existing account structure, fix wasteful spend, and rebuild campaigns that convert high-intent queries into paying customers.</p>
+        <div class="svc-delivers">
+          <div class="svc-del-item">Search campaigns</div>
+          <div class="svc-del-item">Display advertising</div>
+          <div class="svc-del-item">Performance Max</div>
+          <div class="svc-del-item">Shopping campaigns</div>
+          <div class="svc-del-item">Remarketing</div>
+          <div class="svc-del-item">Conversion tracking setup</div>
+          <div class="svc-del-item">Negative keyword management</div>
+          <div class="svc-del-item">Monthly CPA reports</div>
+        </div>
+        <button class="btn-green" onclick="window.location.href='https://calendly.com/palakbhatia192000/palak-meetings'">Get a Google Ads Audit →</button>
+        <div class="tools-grid" style="margin-top:20px">
+          <span class="tool-chip">Google Ads</span><span class="tool-chip">GA4</span><span class="tool-chip">Search Console</span><span class="tool-chip">Google Tag Manager</span>
+        </div>
+      </div>
+      <div class="svc-detail-right">
+        <h3>Typical results</h3>
+        <div class="metric">
+          <div class="metric-item"><span>Avg. CPA reduction</span><span>60%–61%</span></div>
+          <div class="metric-item"><span>Avg. CTR improvement</span><span>+65%</span></div>
+          <div class="metric-item"><span>Wasted spend eliminated</span><span>20–40%</span></div>
+          <div class="metric-item"><span>Time to campaign launch</span><span>21 days</span></div>
+        </div>
+        <div style="margin-top:20px;padding:14px;background:rgba(165,218,118,0.08);border:0.5px solid var(--ac3);border-radius:9px">
+          <p style="font-size:12.5px;color:var(--tm);line-height:1.6;font-style:italic">"They restructured in 3 weeks — leads at half the cost."<br><span style="font-size:11px;color:var(--td);font-style:normal;margin-top:4px;display:block">— Laundry Brand</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDUSTRIES + CTA -->
+  <section class="sec">
+    <div class="sh">
+      <div class="stag">Industries we serve</div>
+      <h2 class="stitle">We've worked across<br>these industries.</h2>
+      <p class="ssub">Industry knowledge means faster strategies, sharper targeting, and better results from day one.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px">
+      <!-- <span class="itag" style="font-size:13px;padding:8px 18px">E-commerce</span> -->
+      <span class="itag" style="font-size:13px;padding:8px 18px">Healthcare</span>
+      <!-- <span class="itag" style="font-size:13px;padding:8px 18px">Real Estate</span> -->
+      <span class="itag" style="font-size:13px;padding:8px 18px">Education</span>
+      <span class="itag" style="font-size:13px;padding:8px 18px">Finance</span>
+      <span class="itag" style="font-size:13px;padding:8px 18px">Local Services</span>
+      <span class="itag" style="font-size:13px;padding:8px 18px">SaaS / Tech</span>
+      <span class="itag" style="font-size:13px;padding:8px 18px">Hospitality</span>
+      <span class="itag" style="font-size:13px;padding:8px 18px">D2C Brands</span>
+      <span class="itag" style="font-size:13px;padding:8px 18px">Professional Services</span>
+    </div>
+    <div class="cta-box" style="text-align:left;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <div style="position:relative;z-index:1">
+        <h2 style="font-size:26px;margin-bottom:6px">Not sure which service fits?</h2>
+        <p style="margin-bottom:0">Let's talk and figure out the best approach for your goals.</p>
+      </div>
+      <button class="btn-dark" onclick="window.location.href='https://calendly.com/palakbhatia192000/palak-meetings'" style="position:relative;z-index:1;white-space:nowrap">Book a Free Consultation →</button>
+    </div>
+  </section>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     PAGE: CASE STUDIES
+═══════════════════════════════════════ -->
+<div id="page-casestudies" style="display:none">
+
+  <div class="page-hero">
+    <div class="stag a1">Proof of work</div>
+    <h1 class="a2">Real projects.<br>Measurable results.</h1>
+    <p class="a3" style="font-size:15px;color:var(--tm);max-width:520px;line-height:1.7;margin-top:12px">We let the numbers speak — across every industry and every service we offer. No vanity metrics.</p>
+  </div>
+
+  <section class="sec" style="padding-top:36px">
+    <div class="filter-tabs" id="cs-filters">
+      <span class="ftab active" onclick="filterCS('all',this)">All</span>
+      <span class="ftab" onclick="filterCS('seo',this)">SEO &amp; Content</span>
+      <span class="ftab" onclick="filterCS('meta',this)">Meta Ads</span>
+      <span class="ftab" onclick="filterCS('google',this)">Google Ads</span>
+    </div>
+    <div class="cs-grid" id="cs-grid">
+      <div class="cs-card featured" data-tags="google seo local" onclick="openCS('cs1')">
+        <div class="cs-card-tags"><span class="atag featured-tag">Featured</span><span class="atag">Local Services</span><span class="atag">Google Ads</span><span class="atag">SEO</span></div>
+        <div class="cs-card-metric">65<span>%</span></div>
+        <div class="cs-card-title">Lower CPL by 65%</div>
+        <div class="cs-card-desc">Delhi-NCR laundry brand grew from 1 store to 5 while cutting CPL to ₹99 and delivering a 22× 12-month ROI.</div>
+        <span class="cs-card-lnk">Read case study →</span>
+      </div>
+      <div class="cs-card" data-tags="google meta education" onclick="openCS('cs2')">
+        <div class="cs-card-tags"><span class="atag">Education</span><span class="atag">Google Ads</span><span class="atag">Facebook Ads</span></div>
+        <div class="cs-card-metric">₹31</div>
+        <div class="cs-card-title">Qualified leads at ₹31 CPL</div>
+        <div class="cs-card-desc">A new market pipeline for nurses moving to Germany, built from scratch with multi-channel ads and strong lead tracking.</div>
+        <span class="cs-card-lnk">Read case study →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Individual CS detail view -->
+  <div id="cs-detail" style="display:none">
+    <div class="cs-full-header">
+      <span class="cs-back" onclick="closeCS()">← Back to case studies</span>
+      <div id="cs-detail-tags" class="cs-tags"></div>
+      <div class="cs-full-metric" id="cs-detail-metric"></div>
+      <div class="cs-sub" id="cs-detail-title" style="font-size:24px;margin-bottom:0"></div>
+    </div>
+    <div class="cs-full-body">
+      <div id="cs-detail-story"></div>
+      <div>
+        <div class="cs-results-card">
+          <h3>Results at a glance</h3>
+          <div id="cs-detail-results"></div>
+        </div>
+        <div class="cs-testi" id="cs-detail-testi"></div>
+      </div>
+    </div>
+    <div style="padding:0 48px 32px;display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn-green" onclick="window.location.href='https://calendly.com/palakbhatia192000/palak-meetings'">Get similar results →</button>
+      <button class="btn-ghost" onclick="closeCS()">← All case studies</button>
+    </div>
+  </div>
+  <div id="cs-list-view">
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     PAGE: ABOUT
+═══════════════════════════════════════ -->
+<div id="page-about" style="display:none">
+
+  <div class="about-hero">
+    <div class="a1">
+      <div class="stag">Who we are</div>
+      <h1>We don't just run ads.<br>We build growth systems.</h1>
+      <p style="font-size:15px;color:var(--tm);line-height:1.7;margin-top:14px">Agnecy is a performance marketing agency built on one belief — every rupee you spend should work harder than the last. We measure everything, optimise relentlessly, and report transparently.</p>
+      <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap">
+        <button class="btn-green" onclick="window.location.href='https://calendly.com/palakbhatia192000/palak-meetings'">Work with us →</button>
+        <button class="btn-ghost" onclick="goto('services')">Our services</button>
+      </div>
+    </div>
+    <div class="about-vis a2">
+      <div class="about-stat-card"><div class="about-stat-n">₹15<span>L+</span></div><div class="about-stat-l">Ad Spend Managed</div></div>
+      <div class="about-stat-card"><div class="about-stat-n">10<span>+</span></div><div class="about-stat-l">Projects Delivered</div></div>
+      <div class="about-stat-card"><div class="about-stat-n">5<span>+</span></div><div class="about-stat-l">Years of Experience</div></div>
+      <div class="about-stat-card"><div class="about-stat-n">8<span>+</span></div><div class="about-stat-l">Industries Served</div></div>
+    </div>
+  </div>
+
+  <!-- FOUNDER -->
+  <div class="founder-grid">
+    <div class="founder-photo">
+      <div class="founder-photo-initials">PB</div>
+      <div class="founder-photo-label">Palak Bhatia — Founder</div>
+    </div>
+    <div class="founder-content">
+      <h2>Built by someone who's been on both sides.</h2>
+      <div class="title">🎯 Founder · Boltiband</div>
+      <p>I started Agnecy because I kept seeing businesses waste money on ads that weren't working — not because the platforms don't work, but because the strategy was broken. Generic campaigns, no tracking, and agencies that optimised for their own metrics rather than client results.</p>
+      <p>I've managed campaigns across 8+ industries and helped businesses from local service providers to D2C brands scale their ad spend profitably. Every client I work with gets the same thing: full transparency, data-driven decisions, and a team that treats your budget like it's their own money.</p>
+      <p>When I'm not building campaigns, I'm a member of the Global Shapers Ajmer Hub — a World Economic Forum initiative focused on community development. I believe businesses that grow responsibly build the strongest foundations.</p>
+      <!-- <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px">
+        <span class="tool-chip">Google Ads Certified</span>
+        <span class="tool-chip">Meta Blueprint</span>
+        <span class="tool-chip">GA4 Certified</span>
+      </div> -->
+    </div>
+  </div>
+
+  <!-- TEAM -->
+  <section class="sec">
+    <div class="sh">
+      <div class="stag">The team</div>
+      <h2 class="stitle">Small team. Big output.</h2>
+      <p class="ssub">Every person on our team is a specialist — no account managers who don't touch your campaigns.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card"><div class="team-av">PS<img src="" alt=""></div><div class="team-name">Prachi Singh</div><div class="team-role">Content Development</div><div class="team-bio">Campaign strategy, client growth, and overall account ownership.</div></div>
+      <div class="team-card"><div class="team-av">MM</div><div class="team-name">Manoj Meghwanshi</div><div class="team-role">Performance Marketing Associate</div><div class="team-bio">Day-to-day campaign management, optimisation, and performance monitoring.</div></div>
+      <!-- <div class="team-card"><div class="team-av">RA</div><div class="team-name">Rahul</div><div class="team-role">Web &amp; Landing Pages</div><div class="team-bio">Landing page development, tracking setup, and conversion optimisation.</div></div> -->
+      <!-- <div class="team-card"><div class="team-av">AV</div><div class="team-name">Avinash</div><div class="team-role">Web Manager</div><div class="team-bio">Website management, technical SEO implementation, and analytics.</div></div> -->
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="sec sec-dark" style="padding-top:0">
+    <div class="sh">
+      <div class="stag">How we operate</div>
+      <h2 class="stitle">Three values we<br>live by every day.</h2>
+    </div>
+    <div class="values-grid">
+      <div class="val-card">
+        <div class="val-icon">📊</div>
+        <div class="val-name">Data over opinions</div>
+        <div class="val-desc">Every decision we make is backed by data — not gut feeling, not what worked for another client, and not what looks nice.</div>
+        <div class="val-practice">In practice: Every recommendation comes with a data point.</div>
+      </div>
+      <div class="val-card">
+        <div class="val-icon">🔍</div>
+        <div class="val-name">Radical transparency</div>
+        <div class="val-desc">You get full access to your dashboards, ad accounts, and reports. We never hold your data hostage or hide poor performance.</div>
+        <div class="val-practice">In practice: You can log into your accounts anytime, day or night.</div>
+      </div>
+      <div class="val-card">
+        <div class="val-icon">📈</div>
+        <div class="val-name">Long-term over quick wins</div>
+        <div class="val-desc">We build strategies designed to compound over time — not campaigns that spike once and die. Your growth should be sustainable.</div>
+        <div class="val-practice">In practice: We plan in 90-day cycles, not one-off campaigns.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <!-- <section class="sec" style="padding-top:0">
+    <div class="sh">
+      <div class="stag">Credentials</div>
+      <h2 class="stitle">Certified &amp; verified.</h2>
+      <p class="ssub">We stay current on every platform we manage — so your campaigns use the latest features and best practices.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-chip">🎯 Google Ads Certified</div>
+      <div class="cert-chip">📱 Meta Blueprint Certified</div>
+      <div class="cert-chip">📊 Google Analytics 4</div>
+      <div class="cert-chip">🏷️ Google Tag Manager</div>
+    </div>
+  </section> -->
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     PAGE: CONTACT US
+═══════════════════════════════════════ -->
+<div id="page-contact" style="display:none">
+  <div class="book-layout">
+    <div class="book-left">
+      <div class="stag a1">Contact Us</div>
+      <h1 class="a2">Book your free<br>30-minute strategy call.</h1>
+      <p class="a3">No pitch. No pressure. Just a clear, honest look at your current setup and a growth plan tailored to your goals.</p>
+      <div class="book-perks a3">
+        <div class="perk"><div class="perk-icon">✓</div><span>We'll review your current ads or SEO setup and spot what's leaking money</span></div>
+        <div class="perk"><div class="perk-icon">🗺</div><span>You'll walk away with a clear 90-day action plan — even if you don't work with us</span></div>
+        <div class="perk"><div class="perk-icon">⏱</div><span>30 minutes. No commitment. No follow-up pressure calls.</span></div>
+      </div>
+      <div class="book-steps a4">
+        <div class="book-step"><div class="book-step-n">1</div><div class="book-step-text"><h4>Fill the form</h4><p>Tell us about your project so we can prepare before the call.</p></div></div>
+        <div class="book-step"><div class="book-step-n">2</div><div class="book-step-text"><h4>Get a WhatsApp confirmation</h4><p>We'll send 2 quick prep questions to make the call more productive.</p></div></div>
+        <div class="book-step"><div class="book-step-n">3</div><div class="book-step-text"><h4>Join the call</h4><p>30 minutes. Real insights. A clear plan for what comes next.</p></div></div>
+      </div>
+      <!-- <a class="wa-btn a5" href="https://wa.me/918764933188" target="_blank" rel="noopener noreferrer">
+        <span style="font-size:18px">💬</span>
+        <span>Prefer WhatsApp? Message us directly</span>
+      </a>
+      <div class="mini-testis" style="margin-top:28px">
+        <div class="mt-card"><p class="mt-q">The first call gave us 3 ideas we implemented that same week."</p><div class="mt-by">— Rahul A., Founder · E-commerce brand</div></div>
+        <div class="mt-card"><p class="mt-q">Most useful 30 minutes I've spent this quarter."</p><div class="mt-by">— Sneha M., Marketing Head · Healthcare startup</div></div>
+      </div> -->
+    </div>
+    <div class="book-right">
+      <h2>Tell us about your project</h2>
+      <p class="sub">We'll review your details before the call so we come prepared — not blank.</p>
+      <form name="contact-form" action="" method="post">
+        <div class="form-group">
+          <label>Full name</label>
+          <input class="form-input" id="full-name" name="full-name" type="text" placeholder="Your name">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email address</label>
+            <input class="form-input" id="email" name="email" type="email" placeholder="you@company.com">
+          </div>
+          <div class="form-group phone-group">
+            <label>Phone number</label>
+            <div class="phone-input-wrap">
+              <select class="form-input" id="country-code" name="country-code" aria-label="Country code">
+                <option value="+91" data-length="10">India (+91)</option>
+                <option value="+1" data-length="10">USA (+1)</option>
+                <option value="+44" data-length="10">UK (+44)</option>
+                <option value="+61" data-length="9">Australia (+61)</option>
+                <option value="+49" data-length="10">Germany (+49)</option>
+              </select>
+              <input class="form-input" type="tel" id="phone-number" name="phone-number" placeholder="+91 9876543210" aria-label="Phone number">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Business / website URL</label>
+          <input class="form-input" id="business-url" name="business-url" type="url" placeholder="www.yourbusiness.com">
+        </div>
+        <div class="form-group">
+          <label>Tell us about your project</label>
+          <textarea class="form-input" id="project-message" name="project-message" placeholder="What are you currently doing for marketing? What's not working? What are your goals?"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Claim My Free Strategy Call →</button>
+        <div class="form-note">Usually responds within 2 hours · No spam · Your data stays private</div>
+      </form>
+      <div class="form-note">Usually responds within 2 hours · No spam · Your data stays private</div>
+    </div>
+    </div>
+  </div>
+
+  </div>
+
+  <footer class="footer">
+    <div><div class="ft-logo">Boltiband<span>.</span></div><p class="ft-tagline">Performance marketing for businesses serious about growth.</p><div class="ft-soc"><a class="ft-si" href="https://www.linkedin.com/company/theboltiband/" target="_blank" rel="noopener noreferrer">in</a></div></div>
+    <div class="ft-col"><h4>Services</h4><ul><li onclick="goto('services')">SEO &amp; Content Writing</li><li onclick="goto('services')">Meta Ads</li><li onclick="goto('services')">Google Ads</li></ul></div>
+    <div class="ft-col"><h4>Company</h4><ul><li onclick="goto('about')">About Us</li><li onclick="goto('casestudies')">Case Studies</li><li><a href="https://calendly.com/palakbhatia192000/palak-meetings">Book a Free Call</a></li></ul></div>
+    <div class="ft-col"><h4>Contact</h4><ul><li>boltibanddigital@gmail.com</li><li><a href="https://wa.me/918764933188" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></li></ul></div>
+  </footer>
+  <div class="ft-bottom"><p>© 2026 Boltiband. All rights reserved.</p><span>Privacy Policy</span></div>
+
+<script src="main.js"></script>
+</body>
+</html>
