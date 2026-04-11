@@ -60,7 +60,9 @@ function goto(page, updateHash = true) {
   if (page === 'casestudies') closeCS();
 
   if (updateHash) {
-    history.replaceState(null, '', '#' + page);
+    if (window.location.hash !== '#' + page) {
+      history.pushState(null, '', '#' + page);
+    }
   }
 }
 
