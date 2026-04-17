@@ -1,29 +1,41 @@
 // ═══════════════════════════════════════
 //  ROUTER
 // ═══════════════════════════════════════
-const pages = ['home','services','casestudies','about','contact'];
+const pages = ['home','services','seo','meta-ads','google-ads','casestudies','about','contact'];
 let currentPage = 'home';
 
 const pageMeta = {
   home: {
-    title: 'BOLTiBAND — Performance Marketing Agency | Google Ads, Meta Ads & SEO',
+    title: 'BOLTiBAND - Performance Marketing Agency | Google Ads, Meta Ads & SEO',
     description: 'BOLTiBAND is a performance marketing agency helping businesses grow with Google Ads, Meta Ads, and SEO & Content. Real results, transparent reporting, no fluff.'
   },
   services: {
-    title: 'Our Services — SEO, Meta Ads & Google Ads | BOLTiBAND',
-    description: 'Explore BOLTiBAND\'s three core services — SEO & Content Writing, Meta Ads, and Google Ads. Data-driven strategies built to lower your CPL and grow your ROAS.'
+    title: 'Our Services - SEO, Meta Ads & Google Ads | BOLTiBAND',
+    description: 'Explore BOLTiBAND\'s three core services - SEO & Content Writing, Meta Ads, and Google Ads. Data-driven strategies built to lower your CPL and grow your ROAS.'
   },
   casestudies: {
-    title: 'Case Studies — Real Results from Real Campaigns | BOLTiBAND',
+    title: 'Case Studies - Real Results from Real Campaigns | BOLTiBAND',
     description: 'See how BOLTiBAND helped brands cut cost per lead, triple ROAS, and rank #1 on Google. Real numbers from real campaigns across 10+ industries.'
   },
   about: {
-    title: 'About BOLTiBAND — Who We Are & How We Work',
+    title: 'About BOLTiBAND - Who We Are & How We Work',
     description: 'BOLTiBAND is a performance marketing agency built on transparency, data, and long-term growth. Meet the team behind the campaigns and learn how we work.'
   },
   contact: {
     title: 'Book a Free Strategy Call | BOLTiBAND',
-    description: 'Book a free 30-minute strategy call with BOLTiBAND. We\'ll review your current ads or SEO, spot what\'s not working, and give you a clear growth plan — no commitment needed.'
+    description: 'Book a free 30-minute strategy call with BOLTiBAND. We\'ll review your current ads or SEO, spot what\'s not working, and give you a clear growth plan - no commitment needed.'
+  },
+  seo: {
+    title: 'SEO & Content Writing — Rank Higher & Stay There | BOLTiBAND',
+    description: 'BOLTiBAND SEO service helps you rank on page one and convert organic visitors into customers. Technical SEO, content writing, keyword strategy, and local SEO.'
+  },
+  'meta-ads': {
+    title: 'Meta Ads — Facebook & Instagram Advertising | BOLTiBAND',
+    description: 'BOLTiBAND runs full-funnel Meta Ads with CAPI setup, audience strategy, and creative briefs. We reduced CPL by 65%+ for clients across education, healthcare, and D2C.'
+  },
+  'google-ads': {
+    title: 'Google Ads Management — Lower CPL & Higher ROI | BOLTiBAND',
+    description: 'BOLTiBAND manages Google Search, Display, PMax, and Shopping campaigns. We cut CPL by 60%+ and delivered 22x ROI for a Delhi NCR local services brand.'
   }
 };
 
@@ -42,8 +54,9 @@ function goto(page, updateHash = true) {
   }
   currentPage = page;
   // Update nav active states
+  const navPage = ['seo','google-ads','meta-ads'].includes(page) ? 'services' : page;
   document.querySelectorAll('.nav-lnk').forEach(el => {
-    el.classList.toggle('active', el.dataset.page === page);
+    el.classList.toggle('active', el.dataset.page === navPage);
   });
   document.querySelectorAll('.mob-lnk').forEach(el => {
     el.classList.toggle('active', el.dataset.mob === page);
@@ -77,11 +90,10 @@ function initPageFromHash() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initPageFromHash();
-  window.addEventListener('hashchange', () => {
-    const nextPage = window.location.hash.replace('#', '');
-    if (nextPage && pages.includes(nextPage)) {
-      goto(nextPage, false);
-    }
+  window.addEventListener('popstate', (e) => {
+    const page = (e.state && e.state.page) ? e.state.page : window.location.hash.replace('#', '');
+    if (page && pages.includes(page)) goto(page, false);
+    else goto('home', false);
   });
 });
 
@@ -90,6 +102,18 @@ function toggleMenu() {
   const menu = document.getElementById('mob-menu');
   ham.classList.toggle('open');
   menu.classList.toggle('open');
+}
+
+function toggleFaq(el) {
+  const isOpen = el.classList.contains('sp-faq-open');
+  document.querySelectorAll('.sp-faq-item').forEach(function(f) {
+    f.classList.remove('sp-faq-open');
+    f.querySelector('.sp-faq-icon').textContent = '+';
+  });
+  if (!isOpen) {
+    el.classList.add('sp-faq-open');
+    el.querySelector('.sp-faq-icon').textContent = '−';
+  }
 }
 
 // ═══════════════════════════════════════
@@ -114,14 +138,14 @@ const csData = {
       <div class="cs-story-section"><h3>Services used</h3><p>Google Ads · Blog and SEO · Pivot table analysis</p></div>
     `,
     results: `
-      <div class="mr-row"><span class="mr-lbl">12-month ROI</span><div class="mr-vals"><span class="mr-before">—</span><span class="mr-arrow">→</span><span class="mr-after">22×</span></div></div>
-      <div class="mr-row"><span class="mr-lbl">11-month ROI</span><div class="mr-vals"><span class="mr-before">—</span><span class="mr-arrow">→</span><span class="mr-after">17×</span></div></div>
-      <div class="mr-row"><span class="mr-lbl">10-month ROI</span><div class="mr-vals"><span class="mr-before">—</span><span class="mr-arrow">→</span><span class="mr-after">14×</span></div></div>
+      <div class="mr-row"><span class="mr-lbl">12-month ROI</span><div class="mr-vals"><span class="mr-before">-</span><span class="mr-arrow">→</span><span class="mr-after">22×</span></div></div>
+      <div class="mr-row"><span class="mr-lbl">11-month ROI</span><div class="mr-vals"><span class="mr-before">-</span><span class="mr-arrow">→</span><span class="mr-after">17×</span></div></div>
+      <div class="mr-row"><span class="mr-lbl">10-month ROI</span><div class="mr-vals"><span class="mr-before">-</span><span class="mr-arrow">→</span><span class="mr-after">14×</span></div></div>
       <div class="mr-row"><span class="mr-lbl">CPL: Dec 2025 vs Dec 2024</span><div class="mr-vals"><span class="mr-before">₹272</span><span class="mr-arrow">→</span><span class="mr-after">₹146</span></div></div>
       <div class="mr-row"><span class="mr-lbl">CPL: Mar 2026 vs Mar 2025</span><div class="mr-vals"><span class="mr-before">₹287</span><span class="mr-arrow">→</span><span class="mr-after">₹99</span></div></div>
       <div class="mr-row"><span class="mr-lbl">Store expansion</span><div class="mr-vals"><span class="mr-before">1</span><span class="mr-arrow">→</span><span class="mr-after">5</span></div></div>
     `,
-    testi: `<p class="cs-testi-q">We expanded from one workshop to five stores while lowering lead costs by two-thirds. The year-long strategy gave us consistent growth without relying on discount-driven traffic.</p><div style="font-size:11.5px;color:var(--td)">— Founder · Laundry brand</div>`
+    testi: `<p class="cs-testi-q">We expanded from one workshop to five stores while lowering lead costs by two-thirds. The year-long strategy gave us consistent growth without relying on discount-driven traffic.</p><div style="font-size:11.5px;color:var(--td)">- Founder · Laundry brand</div>`
   },
   cs2: {
     metric: '₹31', title: 'Qualified leads at ₹31 CPL',
@@ -133,12 +157,32 @@ const csData = {
       <div class="cs-story-section"><h3>Services</h3><p>Google Ads · Facebook Ads · Reporting and analysis</p></div>
     `,
     results: `
-      <div class="mr-row"><span class="mr-lbl">Total leads (Month 1)</span><div class="mr-vals"><span class="mr-before">—</span><span class="mr-arrow">→</span><span class="mr-after">335</span></div></div>
-      <div class="mr-row"><span class="mr-lbl">Qualified leads (Month 1)</span><div class="mr-vals"><span class="mr-before">—</span><span class="mr-arrow">→</span><span class="mr-after">61</span></div></div>
+      <div class="mr-row"><span class="mr-lbl">Total leads (Month 1)</span><div class="mr-vals"><span class="mr-before">-</span><span class="mr-arrow">→</span><span class="mr-after">335</span></div></div>
+      <div class="mr-row"><span class="mr-lbl">Qualified leads (Month 1)</span><div class="mr-vals"><span class="mr-before">-</span><span class="mr-arrow">→</span><span class="mr-after">61</span></div></div>
       <div class="mr-row"><span class="mr-lbl">Qualified lead rate</span><div class="mr-vals"><span class="mr-before">16%</span><span class="mr-arrow">→</span><span class="mr-after">18%</span></div></div>
       <div class="mr-row"><span class="mr-lbl">Cost per lead</span><div class="mr-vals"><span class="mr-before">₹100</span><span class="mr-arrow">→</span><span class="mr-after">₹31</span></div></div>
     `,
-    testi: `<p class="cs-testi-q">Moving lead tracking to a CRM and testing multiple video narratives helped us build a high-quality pipeline in a new market with very low CPL.</p><div style="font-size:11.5px;color:var(--td)">— Growth lead · International nurse training brand</div>`
+    testi: `<p class="cs-testi-q">Moving lead tracking to a CRM and testing multiple video narratives helped us build a high-quality pipeline in a new market with very low CPL.</p><div style="font-size:11.5px;color:var(--td)">- Growth lead · International nurse training brand</div>`
+  },
+  cs3: {
+    metric: '9.5X', title: '9.5X ROAS For an Ed-Tech Brand',
+    tags: '<span class="atag">Education</span><span class="atag">Google Ads</span><span class="atag">Facebook Ads</span>',
+    story: `
+      <div class="cs-story-section"><h3>Overview</h3><p>Shankara IAS Academy offers coaching programmes for UPSC, TNPSC and Banking exams. They are a well-known coaching centre in Tamil Nadu. In Coimbatore, they opened their first franchise. Although Shankara was famous, they wanted to spread the word about their Coimbatore franchise and get more students to enrol.</p></div>
+      <div class="cs-story-section"><h3>Objective</h3><p>The objective was to generate ₹5,00,000 in conversions to sustain the new branch. Since the business offers high-ticket, long-term courses, even 2 conversions were enough to reach breakeven, covering both ad spend and agency costs. However, the challenge lay in intense competition and a long decision-making (sales) cycle.</p></div>
+      <div class="cs-story-section"><h3>Services And Approach</h3><p>Google My Business Ads | Facebook Ads<br><br>Call, Lead and WhatsApp Campaigns<br>For each course, there were 3 campaigns. For calls, leads and Whatsapp messages. This distribution kept a balance between quality and quantity of leads.<br><br>Google Smart Campaigns<br>After a week, we started noticing a pattern. Once people saw our Facebook ads, they searched for us on Google for more information. To capitalise on this, ranking number 1 on Google became an urgent requirement. But we didn't have a website. So, We started paid ad campaigns on Google My Business. Our well-optimised Google My Business listing started ranking at the top and generating phone call leads.</p></div>
+    `,
+    results: `
+      <div class="mr-row"><span class="mr-lbl">Total Leads Generated</span><div class="mr-vals"><span class="mr-before">-</span><span class="mr-arrow">→</span><span class="mr-after">470</span></div></div>
+      <div class="mr-row"><span class="mr-lbl">Cost Per Lead (CPL)</span><div class="mr-vals"><span class="mr-before">-</span><span class="mr-arrow">→</span><span class="mr-after">₹134</span></div></div>
+      <div class="mr-row"><span class="mr-lbl">Qualified Leads</span><div class="mr-vals"><span class="mr-before">-</span><span class="mr-arrow">→</span><span class="mr-after">376</span></div></div>
+      <div class="mr-row"><span class="mr-lbl">Assuming a conservative 1% conversion rate, approximately 3 leads were converted</span><div class="mr-vals"><span class="mr-before">-</span><span class="mr-arrow">→</span><span class="mr-after">3</span></div></div>
+      <div class="mr-row"><span class="mr-lbl">Average Ticket Size</span><div class="mr-vals"><span class="mr-before">-</span><span class="mr-arrow">→</span><span class="mr-after">₹2,00,000</span></div></div>
+      <div class="mr-row"><span class="mr-lbl">Total Ad Spend</span><div class="mr-vals"><span class="mr-before">-</span><span class="mr-arrow">→</span><span class="mr-after">₹63,435</span></div></div>
+      <div class="mr-row"><span class="mr-lbl">Total Conversion Value</span><div class="mr-vals"><span class="mr-before">-</span><span class="mr-arrow">→</span><span class="mr-after">₹6,00,000</span></div></div>
+      <div class="mr-row"><span class="mr-lbl">ROAS</span><div class="mr-vals"><span class="mr-before">-</span><span class="mr-arrow">→</span><span class="mr-after">9.5X</span></div></div>
+    `,
+    testi: `<p class="cs-testi-q">The targeted campaigns helped us establish our Coimbatore franchise successfully, generating high-quality leads and achieving excellent ROAS despite the competitive market.</p><div style="font-size:11.5px;color:var(--td)">- Founder · Shankara IAS Academy</div>`
   }
 };
 
@@ -284,4 +328,137 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
     submitForm();
   });
+});
+
+function easeOutCubic(t) {
+  return 1 - Math.pow(1 - t, 3);
+}
+
+function updateStarFills(stars, currentValue) {
+  const maxRating = 5;
+  const activeValue = Math.min(currentValue, maxRating);
+  stars.forEach((star, index) => {
+    const fill = Math.max(0, Math.min(activeValue - index, 1)) * 100;
+    const fillElement = star.querySelector('.star-fill');
+    if (fillElement) {
+      fillElement.style.width = `${fill}%`;
+    }
+    if (fill > 0) {
+      star.classList.add('filled');
+    }
+  });
+}
+
+function animateStat(stat) {
+  const valueEl = stat.querySelector('.stat-value');
+  const fillBar = stat.querySelector('.stat-fill');
+  const stars = stat.querySelectorAll('.star');
+  const target = parseFloat(stat.dataset.target) || 0;
+  const decimals = parseInt(stat.dataset.decimals || '0', 10);
+  const fillPercent = parseFloat(stat.dataset.fill || '100');
+  const duration = 2000;
+  let startTime = null;
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = easeOutCubic(progress);
+    const currentValue = target * eased;
+
+    if (valueEl) {
+      const displayValue = decimals > 0 ? currentValue.toFixed(decimals) : Math.round(currentValue);
+      valueEl.textContent = displayValue;
+    }
+
+    if (fillBar) {
+      fillBar.style.width = `${fillPercent * eased}%`;
+    }
+
+    if (stars.length) {
+      updateStarFills(stars, currentValue);
+    }
+
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  }
+
+  window.requestAnimationFrame(step);
+}
+
+function initStatsSection() {
+  const statsSection = document.getElementById('statsSection');
+  if (!statsSection) return;
+  const stats = Array.from(statsSection.querySelectorAll('.stat'));
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        stats.forEach(stat => animateStat(stat));
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.25, rootMargin: '0px 0px -120px 0px' });
+  observer.observe(statsSection);
+}
+
+function initTimelineAnimation() {
+  const timelineContainer = document.getElementById('processTimeline');
+  if (!timelineContainer) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Trigger timeline animations
+        const timelineLine = timelineContainer.querySelector('.timeline-line');
+        const stepCards = timelineContainer.querySelectorAll('.step-card');
+
+        // Start line drawing animation
+        if (timelineLine) {
+          timelineLine.style.animationPlayState = 'running';
+        }
+
+        // Start step card animations
+        stepCards.forEach((card, index) => {
+          setTimeout(() => {
+            card.style.animationPlayState = 'running';
+          }, index * 200);
+        });
+
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '0px 0px -100px 0px' });
+
+  observer.observe(timelineContainer);
+}
+
+function initScrollReveal() {
+  const revealTargets = Array.from(document.querySelectorAll(
+    'section, .svc-card, .step-card, .stat, .cs-card, .tcard, .team-card, .val-card, .mr-row, .cta-box, .book-step, .cs-story-section'
+  ));
+  if (!revealTargets.length) return;
+
+  revealTargets.forEach((el, index) => {
+    el.classList.add('reveal');
+    const delay = (index % 6) * 80;
+    el.style.transitionDelay = `${delay}ms`;
+  });
+
+  const revealObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.16, rootMargin: '0px 0px -120px 0px' });
+
+  revealTargets.forEach(el => revealObserver.observe(el));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initStatsSection();
+  initTimelineAnimation();
+  initScrollReveal();
 });
