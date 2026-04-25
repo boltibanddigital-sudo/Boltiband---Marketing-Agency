@@ -1,8 +1,203 @@
 // ═══════════════════════════════════════
 //  ROUTER
 // ═══════════════════════════════════════
-const pages = ['home','services','seo','meta-ads','google-ads','casestudies','about','contact'];
+const pages = ['home','services','seo','meta-ads','google-ads','cro','analytics','casestudies','about','contact'];
 let currentPage = 'home';
+
+// ═══════════════════════════════════════
+//  GROWTH SYSTEM SERVICE SWITCHER
+// ═══════════════════════════════════════
+
+const serviceContent = {
+  organic: {
+    title: 'Organic Growth (SEO & Content)',
+    outcome: 'A discoverable, authoritative brand presence in search and inbound demand that compounds over time.',
+    objective: 'Establish visibility across high-intent and high-relevance search queries, build topical authority within the category, and structure the website to convert demand into qualified leads and revenue.',
+    methodologies: ['Technical SEO', 'Keyword Strategy', 'Internal Linking', 'CRO', 'Content Systems', 'Backlinks', 'Digital PR'],
+    results: [
+      { number: '2–5x', label: 'Growth in Organic Traffic Over 6–12 Months' },
+      { number: '30–70%', label: 'Increase in Qualified Inbound Leads from Organic Channels' },
+      { number: 'Top 3', label: 'Rankings for a growing set of high-intent keywords' },
+      { number: 'Gradual Reduction', label: 'In Dependency on Paid Acquisition' }
+    ]
+  },
+  'paid-social': {
+    title: 'Paid Social Growth (Meta Ads)',
+    outcome: 'Scalable customer acquisition supported by sustained brand visibility and increased consideration.',
+    objective: 'Create a paid social ecosystem that not only generates qualified demand, but also strengthens brand visibility through repeated, relevant audience engagement.',
+    methodologies: ['Meta Ads', 'Audience Segmentation', 'Audience Research', 'Creative Strategy' , 'Performance Testing Frameworks' , 'Funnel-Based Campaign Structuring' , 'Retargeting Systems', 'Conversion Tracking (Pixel & CAPI)', 'Creative Iteration Cycles', 'Performance Analytics'],
+    results: [
+      { number: '20-40%', label: 'Reduction in Cost Per Acquisition Over 8–12 Weeks' },
+      { number: '2-3x', label: 'Increase In Qualified lead volume with scaling' },
+      { number: 'Improve CTR', label: 'through creative optimisation' },
+      { number: 'Stronger', label: 'retargeting performance and repeat engagement' }
+    ]
+  },
+  search: {
+    title: 'Search Demand Capture (Google Ads)',
+    outcome: 'Capture profitable revenue, 4X ROAS and above for most businesses, from high-intent prospects at the moment of decision.',
+    objective: 'Position the business in front of active buyers, align search campaigns with commercial intent, and improve conversion efficiency across every stage of the customer journey.',
+    methodologies: ['Google Search Ads', 'Performance Max', 'Shopping campaigns', 'keyword clustering', 'bid strategy refinement', 'feed optimisation','audience layering', 'remarketing systems', 'landing page alignment', 'conversion tracking'],
+    results: [
+      { number: '3–5x', label: 'ROAS for optimised campaigns' },
+      { number: '15–35%', label: 'Improvement in conversion rates from search traffic' },
+      { number: 'Higher', label: 'share of impressions on high-intent keywords' },
+      { number: 'Consistent', label: 'revenue contribution from bottom-funnel demand' }
+    ]
+  },
+  cro: {
+    title: 'Conversion Optimisation',
+    outcome: 'Higher revenue efficiency from existing traffic and marketing investment.',
+    objective: 'Improve how visitors move through the website so more of the generated demand converts into measurable business outcomes.',
+    methodologies: ['User journey analysis', 'Landing page optimisation', 'A/B testing', 'Heatmap analysis', 'Funnel analysis', 'UX refinement', 'CTA optimisation', 'Form optimisation', 'Analytics tracking'],
+    results: [
+      { number: '15–40%', label: 'increase in conversion rates' },
+      { number: '10-20%', label: 'improvement in average order value (AOV) ' },
+      { number: 'Reduced', label: 'drop-offs across key funnel stages' },
+      { number: 'Better ', label: 'performance from existing traffic without increasing spend' }
+    ]
+  },
+  analytics: {
+    title: 'Analytics & Reporting',
+    outcome: 'Understand what drives growth and where investment performs best.',
+    objective: 'Develop a robust measurement framework that brings clarity to performance and guides strategic decision-making.',
+    methodologies: ['GA4', 'Google Tag Manager', 'server-side tracking', 'conversion attribution', 'dashboard reporting', 'event tracking', 'cross-channel attribution models', 'performance reporting systems'],
+    results: [
+      { number: '10-20%', label: 'improvement in budget efficiency' },
+      { number: 'Clear', label: 'visibility into high-performing channels and campaigns' },
+      { number: 'Faster', label: 'data-backed decision-making cycles' },
+      { number: 'Reduction', label: 'in wasted ad spend and misattribution' }
+    ]
+  }
+};
+
+function switchService(card, serviceId) {
+  // Update active card
+  document.querySelectorAll('.gs-pillar-card').forEach(c => c.classList.remove('active'));
+  card.classList.add('active');
+
+  // Get content
+  const content = serviceContent[serviceId];
+  
+  // Update panel left
+  document.querySelector('.gs-service-title').textContent = content.title;
+  document.querySelector('.gs-outcome-text').textContent = content.outcome;
+
+  // Update panel right
+  document.querySelector('.gs-objective').innerHTML = `<p>${content.objective}</p>`;
+  
+  // Update methodologies
+  const methodsContainer = document.querySelector('.gs-methodologies');
+  methodsContainer.innerHTML = content.methodologies
+    .map(method => `<span class="gs-method-tag">${method}</span>`)
+    .join('');
+
+  // Update results
+  const resultsContainer = document.querySelector('.gs-results');
+  resultsContainer.innerHTML = content.results
+    .map(result => `
+      <div class="gs-result-card">
+        <div class="gs-result-number">${result.number}</div>
+        <div class="gs-result-label">${result.label}</div>
+      </div>
+    `)
+    .join('');
+}
+
+// ═══════════════════════════════════════
+//  SCROLL ANIMATIONS
+// ═══════════════════════════════════════
+
+/**
+ * Initialize scroll reveal animations using Intersection Observer
+ * This provides smooth fade-in and slide animations for elements as they enter the viewport
+ */
+function initScrollAnimations() {
+  // Check if IntersectionObserver is supported
+  if (!('IntersectionObserver' in window)) {
+    console.warn('IntersectionObserver not supported. Scroll animations disabled.');
+    return;
+  }
+
+  // Configuration for Intersection Observer
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -80px 0px', // Trigger when element is 80px from bottom of viewport
+    threshold: 0 // Trigger as soon as any pixel enters viewport
+  };
+
+  // Create observer callback
+  const observerCallback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Add revealed class to trigger animation
+        entry.target.classList.add('revealed');
+        // Optional: unobserve after animation to improve performance
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  // Create observer instance
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  // Observe all scroll-reveal elements
+  document.querySelectorAll('.scroll-reveal, .scroll-reveal-scale, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-stagger').forEach((el) => {
+    observer.observe(el);
+  });
+}
+
+/**
+ * Add smooth scroll behavior to navigation links
+ */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href !== '#' && href !== '#' + currentPage) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+}
+
+/**
+ * Initialize button click animations
+ */
+function initButtonAnimations() {
+  const buttons = document.querySelectorAll('button, .btn-green, .btn-dark, .btn-ghost');
+  buttons.forEach((button) => {
+    button.addEventListener('mousedown', function() {
+      this.style.transform = 'scale(0.98)';
+    });
+    button.addEventListener('mouseup', function() {
+      this.style.transform = '';
+    });
+    button.addEventListener('mouseleave', function() {
+      this.style.transform = '';
+    });
+  });
+}
+
+/**
+ * Initialize all animations on page load
+ */
+function initAllAnimations() {
+  initScrollAnimations();
+  initSmoothScroll();
+  initButtonAnimations();
+}
+
+// Call initialization when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAllAnimations);
+} else {
+  initAllAnimations();
+}
 
 const pageMeta = {
   home: {
@@ -36,6 +231,14 @@ const pageMeta = {
   'google-ads': {
     title: 'Google Ads Management — Lower CPL & Higher ROI | BOLTiBAND',
     description: 'BOLTiBAND manages Google Search, Display, PMax, and Shopping campaigns. We cut CPL by 60%+ and delivered 22x ROI for a Delhi NCR local services brand.'
+  },
+  cro: {
+    title: 'Conversion Rate Optimisation — More Revenue, Same Traffic | BOLTiBAND',
+    description: 'BOLTiBAND CRO service helps you convert more of your existing traffic with A/B testing, heatmap analysis, funnel optimisation, and UX refinement. Avg. 15–40% conversion lift.'
+  },
+  analytics: {
+    title: 'Analytics & Reporting — Clean Data, Clear Decisions | BOLTiBAND',
+    description: 'BOLTiBAND builds GA4, Google Tag Manager, and Looker Studio setups that give you accurate cross-channel data and monthly reports that drive real decisions.'
   }
 };
 
@@ -54,7 +257,7 @@ function goto(page, updateHash = true) {
   }
   currentPage = page;
   // Update nav active states
-  const navPage = ['seo','google-ads','meta-ads'].includes(page) ? 'services' : page;
+  const navPage = ['seo','google-ads','meta-ads','cro','analytics'].includes(page) ? 'services' : page;
   document.querySelectorAll('.nav-lnk').forEach(el => {
     el.classList.toggle('active', el.dataset.page === navPage);
   });
