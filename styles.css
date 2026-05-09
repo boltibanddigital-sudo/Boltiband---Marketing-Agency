@@ -704,7 +704,7 @@ a {
    display: block;
    width: 22px;
    height: 2px;
-   background: var(--nw);
+   background: var(--primary);
    border-radius: 2px;
    transition: all .3s
 }
