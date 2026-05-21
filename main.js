@@ -245,7 +245,7 @@ const pageMeta = {
 function goto(page, updateHash = true) {
   pages.forEach(p => {
     const el = document.getElementById('page-' + p);
-    if (el) el.style.display = 'none';
+    // if (el) el.style.display = 'none';
   });
   const target = document.getElementById('page-' + page);
   if (target) {
@@ -674,4 +674,47 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
     document.getElementById("offchat-menu").checked = true;
   }, 5000);
+});
+
+
+// Data layer push for click on Book a call button
+dataLayer.push({
+  event: 'Book a Call',
+  loginMethod: 'email'
+});
+/* ---------------------------------------
+   FAQ ACCORDION FUNCTIONALITY
+--------------------------------------- */
+
+// Initialize FAQ accordion on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    
+    // Initially hide all answers
+    answer.style.display = 'none';
+    
+    // Add click event to toggle
+    question.addEventListener('click', function() {
+      // Close all other items
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-answer').style.display = 'none';
+        }
+      });
+      
+      // Toggle current item
+      item.classList.toggle('active');
+      
+      if (item.classList.contains('active')) {
+        answer.style.display = 'block';
+      } else {
+        answer.style.display = 'none';
+      }
+    });
+  });
 });

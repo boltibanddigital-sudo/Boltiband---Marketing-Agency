@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +12,13 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SBTSQHBLZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
-
   gtag('config', 'G-1SBTSQHBLZ');
 </script>
 
@@ -32,43 +31,37 @@
       j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
         'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
   })(window, document, 'script', 'dataLayer', 'GTM-KFTDWHBC');</script>
-<!-- End Google Tag Manager -->
-
 
 <body>
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFTDWHBC" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
-  <!-- ═══ NAV ═══ -->
+  <!-- NAV -->
   <nav class="nav" id="main-nav">
-    <div class="nav-logo" onclick="goto('home')"><span
+    <div class="nav-logo"><a href="index.html"><span
         style="color: var(--primary); text-transform: uppercase;">Bolt</span>i<span
-        style="color: var(--primary); text-transform: uppercase;">Band</span><span>.</span></div>
+        style="color: var(--primary); text-transform: uppercase;">Band</span><span>.</span></a></div>
     <div class="nav-links">
-      <span class="nav-lnk active" onclick="goto('home')" data-page="home">Home</span>
+      <a href="index.html" class="nav-lnk active" data-page="home">Home</a>
       <div class="nav-dropdown" data-page="services">
         <span class="nav-lnk" data-page="services">Services ▾</span>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <span class="nav-dd-heading">Services</span>
-            <!-- <span onclick="goto('services')">All Services</span> -->
-            <span onclick="goto('seo')">SEO &amp; Content</span>
-            <span onclick="goto('google-ads')">Google Ads</span>
-            <span onclick="goto('meta-ads')">Meta Ads</span>
-            <span onclick="goto('cro')">Conversion Optimisation</span>
-            <span onclick="goto('analytics')">Analytics &amp; Reporting</span>
+            <span><a href="seo-content.html">SEO &amp; Content</a></span>
+            <span><a href="google-ads.html">Google Ads</a></span>
+            <span><a href="meta-ads.html">Meta Ads</a></span>
+            <span><a href="conversion-optimisation.html">Conversion Optimisation</a></span>
+            <span><a href="analytics-reporting.html">Analytics &amp; Reporting</a></span>
           </div>
         </div>
       </div>
-      <span class="nav-lnk" onclick="goto('casestudies')" data-page="casestudies">Case Studies</span>
-      <span class="nav-lnk" onclick="goto('about')" data-page="about">About Us</span>
-      <span class="nav-lnk" onclick="goto('contact')" data-page="contact">Contact Us</span>
-      <button class="nav-btn"
-        onclick="window.location.href='https://calendly.com/palakbhatia192000/palak-meetings'">Book a Free Call
-        →</button>
+      <a href="case-studies.html" class="nav-lnk" data-page="casestudies">Case Studies</a>
+      <a href="about.html" class="nav-lnk" data-page="about">About Us</a>
+      <a href="contact.html" class="nav-lnk" data-page="contact">Contact Us</a>
+      <a href="contact.html" class="nav-btn">Book a Free Call →</a>
     </div>
     <div class="ham" id="ham" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -77,21 +70,17 @@
 
   <!-- Mobile menu -->
   <div class="mob-menu" id="mob-menu">
-    <span class="mob-lnk" onclick="goto('home');toggleMenu()" data-mob="home">Home</span>
-    <span class="mob-lnk" onclick="toggleMenu()" data-mob="services">Services</span>
-    <span class="mob-sub-lnk" onclick="goto('seo');toggleMenu()" data-mob="seo">↳ SEO &amp; Content</span>
-    <span class="mob-sub-lnk" onclick="goto('google-ads');toggleMenu()" data-mob="google-ads">↳ Google
-      Ads</span>
-    <span class="mob-sub-lnk" onclick="goto('meta-ads');toggleMenu()" data-mob="meta-ads">↳ Meta Ads</span>
-    <span class="mob-sub-lnk" onclick="goto('cro');toggleMenu()" data-mob="cro">↳ Conversion Optimisation</span>
-    <span class="mob-sub-lnk" onclick="goto('analytics');toggleMenu()" data-mob="analytics">↳ Analytics &amp;
-      Reporting</span>
-    <span class="mob-lnk" onclick="goto('casestudies');toggleMenu()" data-mob="casestudies">Case Studies</span>
-    <span class="mob-lnk" onclick="goto('about');toggleMenu()" data-mob="about">About Us</span>
-    <span class="mob-lnk" onclick="goto('contact');toggleMenu()" data-mob="contact">Contact Us</span>
-    <button class="mob-btn"
-      onclick="window.location.href='https://calendly.com/palakbhatia192000/palak-meetings';toggleMenu()">Book a Free
-      Call →</button>
+    <a href="index.html" class="mob-lnk">Home</a>
+    <span class="mob-lnk" onclick="toggleSubmenu()">Services</span>
+    <a href="seo-content.html" class="mob-sub-lnk">↳ SEO &amp; Content</a>
+    <a href="google-ads.html" class="mob-sub-lnk">↳ Google Ads</a>
+    <a href="meta-ads.html" class="mob-sub-lnk">↳ Meta Ads</a>
+    <a href="conversion-optimisation.html" class="mob-sub-lnk">↳ Conversion Optimisation</a>
+    <a href="analytics-reporting.html" class="mob-sub-lnk">↳ Analytics &amp; Reporting</a>
+    <a href="case-studies.html" class="mob-lnk">Case Studies</a>
+    <a href="about.html" class="mob-lnk">About Us</a>
+    <a href="contact.html" class="mob-lnk">Contact Us</a>
+    <a href="contact.html" class="mob-btn">Book a Free Call →</a>
   </div>
 
   <!-- ═══════════════════════════════════════
@@ -112,7 +101,7 @@
           <button class="btn-green"
             onclick="window.location.href='https://calendly.com/palakbhatia192000/palak-meetings'">Book a Free Strategy
             Call →</button>
-          <button class="btn-ghost" onclick="goto('casestudies')">See Our Work</button>
+          <button class="btn-ghost" href="case-studies.html"><a href="case-studies.html">See Our Work</a></button>
         </div>
       </div>
       <div class="hero-vis">
@@ -3450,28 +3439,28 @@
     <div class="ft-col">
       <h4>Services</h4>
       <ul>
-        <li onclick="goto('seo')">SEO &amp; Content Writing</li>
-        <li onclick="goto('meta-ads')">Meta Ads</li>
-        <li onclick="goto('google-ads')">Google Ads</li>
-        <li onclick="goto('cro')">Conversion Optimization</li>
-        <li onclick="goto('analytics')">Analytics & Reporting</li>
+        <li href="seo-content.html"><a href="seo-content.html">SEO &amp; Content Writing</a></li>
+        <li href="meta-ads.html"><a href="meta-ads.html">Meta Ads</a></li>
+        <li href="google-ads.html"><a href="google-ads.html">Google Ads</a></li>
+        <li href="conversion-optimisation.html"><a href="conversion-optimisation.html">Conversion Optimization</a></li>
+        <li href="analytics-reporting.html"><a href="analytics-reporting.html">Analytics & Reporting</a></li>
       </ul>
     </div>
     <div class="ft-col">
       <h4>Company</h4>
       <ul>
-        <li onclick="goto('about')">About Us</li>
-        <li onclick="goto('casestudies')">Case Studies</li>
+        <li href="about.html"><a href="about.html">About Us</a></li>
+        <li href="casestudies.html"><a href="casestudies.html">Case Studies</a></li>
         <li><a href="https://calendly.com/palakbhatia192000/palak-meetings">Book a Free Call</a></li>
       </ul>
     </div>
-    <div class="ft-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:boltibanddigital@gmail.com">boltibanddigital@gmail.com</a></li>
-        <li><a href="https://wa.me/918764933188" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></li>
-      </ul>
-    </div>
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:boltibanddigital@gmail.com">boltibanddigital@gmail.com</a></li>
+          <li><a href="https://wa.me/918764933188" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></li>
+        </ul>
+      </div>
     <div class="ft-col">
       <h4>Address</h4>
       <ul>
