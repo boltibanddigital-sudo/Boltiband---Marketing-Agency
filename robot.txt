@@ -1,0 +1,26 @@
+# robots.txt for theboltiband.com
+# Last updated: May 2026
+ 
+# Allow all search engine bots
+User-agent: *
+Allow: /
+ 
+# Block admin, backend, and junk pages from being indexed
+Disallow: /thank-you.html
+Disallow: /404.html
+Disallow: /cgi-bin/
+Disallow: /?*
+Disallow: /*?utm_
+Disallow: /*?fbclid=
+Disallow: /*?gclid=
+ 
+# Google
+User-agent: Googlebot
+Allow: /
+ 
+# Bing
+User-agent: Bingbot
+Allow: /
+ 
+# Point to your sitemap
+Sitemap: https://theboltiband.com/sitemap.xml
